@@ -1,8 +1,21 @@
 import java.util.Scanner;
-
+import java.io.*;
 class Main{	
 	public static void main(String[] args){
-		System.out.println("ooo");
+		File f = null;
+		try{
+			f = new File(args[0]);
+			Scanner read = new Scanner(f).useDelimiter(Pattern.compile("., //"//n"));
+		}		
+		catch(FileNotFoundException e){
+			f = null;
+			System.out.println("Error, file not found");
+		}
+		if (f != null){
+			System.out.println("g2g");
+			
+		}
+		
 	}
 }
 class InReader{
@@ -40,5 +53,8 @@ class Exclamation extends Word{
 	
 }
 class Onomatopoeia extends Word{
+
+}
+class Pronoun extends Noun{
 
 }
